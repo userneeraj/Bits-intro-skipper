@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "BITS Intro Skipper",
+    "version": "1.2",
+    "description": "Automatically skips the intro sound of Coursera videos. Toggle via popup.",
+    "permissions": [
+        "scripting",
+        "storage",
+        "activeTab"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "bits_logo.png"
+    },
+    "icons": {
+        "48": "bits_logo.png",
+        "128": "bits_logo.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://www.coursera.org/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
